@@ -1,0 +1,293 @@
+<html>
+
+<head>
+    <title>Real Time Image Identification App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <center>
+        <h1>Case study between Google Lens and Mobilenet</h1>
+        
+        <span id="google">Google lens <img id="lens_img" src="google_lens.png" class="img_responsive"></span>
+        
+        <img style="height: 100px;" src="vs.webp">
+         
+        <span class="btn btn-primary" id="mobilenet"> Mobilenet </span>
+        
+            <div class="test_image_and_result cl-xs-12">
+               <ol start="1" style="font-size: 30px;">
+                <li class="col-sm-4 col-xs-12">
+                    <b id="test_image"> Test Image - </b>
+                    <img src="abacus.jpeg" class="img_responsive">
+                </li>
+
+                <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                    Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+                    <span style="font-weight: bold; color: rgb(54, 85, 220);"> Abacus </span>
+                </h5>
+
+                <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                    Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+                    <span style="font-weight: bold; color: rgb(54, 85, 220);"> Abacus,Shower </span>
+                </h5>
+
+                <div class="mini_result" class="col-xs-12">
+                    <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+                    <hr>
+                    <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+                </div>
+
+              
+                   
+            
+                </div>
+
+            </div>
+            <br> <br>
+        </ol>
+
+
+
+        <div class="test_image_and_result cl-xs-12">
+            <ol start="2" style="font-size: 30px;">
+             <li class="col-sm-4 col-xs-12">
+                 <b id="test_image"> Test Image - </b>
+                 <img style="height: 300px;" src="book.jpeg" class="img_responsive">
+             </li>
+
+             <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                 Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+                 <span style="font-weight: bold; color: rgb(54, 85, 220);"> Novel </span>
+             </h5>
+
+             <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                 Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+                 <span style="font-weight: bold; color: rgb(54, 85, 220);"> Hair Spray </span>
+             </h5>
+
+             <div class="mini_result" class="col-xs-12">
+                 <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+                 <hr>
+                 <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+             </div>
+
+             
+                
+         
+             </div>
+
+         </div>
+         <br> <br>
+     </ol>
+
+     <div class="test_image_and_result cl-xs-12">
+        <ol start="3" style="font-size: 30px;">
+         <li class="col-sm-4 col-xs-12">
+             <b id="test_image"> Test Image - </b>
+             <img style="height: 300px;" src="bottle.jpeg" class="img_responsive">
+         </li>
+
+         <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+             Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+             <span style="font-weight: bold; color: rgb(54, 85, 220);"> Borosil Stainless </span>
+         </h5>
+
+         <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+             Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+             <span style="font-weight: bold; color: rgb(54, 85, 220);"> Punching ball ,Punching bag </span>
+         </h5>
+
+         <div class="mini_result" class="col-xs-12">
+             <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+             <hr>
+             <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+         </div>
+
+        
+            
+     
+         </div>
+
+     </div>
+     <br> <br>
+ </ol>
+
+
+<div class="test_image_and_result cl-xs-12">
+<ol start="4" style="font-size: 30px;">
+ <li class="col-sm-4 col-xs-12">
+     <b id="test_image"> Test Image - </b>
+     <img style="height: 300px;" src="comb.jpeg" class="img_responsive">
+ </li>
+
+ <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+     Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+     <span style="font-weight: bold; color: rgb(54, 85, 220);"> Hair dressing Comb </span>
+ </h5>
+
+ <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+     Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+     <span style="font-weight: bold; color: rgb(54, 85, 220);"> Stick </span>
+ </h5>
+
+ <div class="mini_result" class="col-xs-12">
+     <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+     <hr>
+     <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+ </div>
+
+ 
+
+ </div>
+
+</div>
+<br> <br>
+</ol>
+
+<div class="test_image_and_result cl-xs-12">
+    <ol start="5" style="font-size: 30px;">
+     <li class="col-sm-4 col-xs-12">
+         <b id="test_image"> Test Image - </b>
+         <img style="height: 300px;" src="pen.jpeg" class="img_responsive">
+     </li>
+    
+     <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+         Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+         <span style="font-weight: bold; color: rgb(54, 85, 220);"> Customised Ball pen </span>
+     </h5>
+    
+     <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+         Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+         <span style="font-weight: bold; color: rgb(54, 85, 220);"> Ball pen , Ball point, Ballpoint pen </span>
+     </h5>
+    
+     <div class="mini_result" class="col-xs-12">
+         <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+         <hr>
+         <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Both are accurate </h4>
+     </div>
+    
+     
+       
+     </div>
+    
+    </div>
+    <br> <br>
+    </ol>
+
+    <div class="test_image_and_result cl-xs-12">
+        <ol start="6" style="font-size: 30px;">
+         <li class="col-sm-4 col-xs-12">
+             <b id="test_image"> Test Image - </b>
+             <img style="height: 300px;" src="spoon.jpeg" class="img_responsive">
+         </li>
+        
+         <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+             Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+             <span style="font-weight: bold; color: rgb(54, 85, 220);"> Spoon </span>
+         </h5>
+        
+         <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+             Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+             <span style="font-weight: bold; color: rgb(54, 85, 220);"> Label </span>
+         </h5>
+        
+         <div class="mini_result" class="col-xs-12">
+             <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+             <hr>
+             <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+         </div>
+        
+        
+             
+        
+         </div>
+        
+        </div>
+        <br> <br>
+        </ol>
+
+
+        <div class="test_image_and_result cl-xs-12">
+            <ol start="7" style="font-size: 30px;">
+             <li class="col-sm-4 col-xs-12">
+                 <b id="test_image"> Test Image - </b>
+                 <img style="height: 300px;" src="stapler.jpeg" class="img_responsive">
+             </li>
+            
+             <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                 Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+                 <span style="font-weight: bold; color: rgb(54, 85, 220);"> Unique Kangaro Stapler </span>
+             </h5>
+            
+             <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                 Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+                 <span style="font-weight: bold; color: rgb(54, 85, 220);"> seat belt </span>
+             </h5>
+            
+             <div class="mini_result" class="col-xs-12">
+                 <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+                 <hr>
+                 <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+             </div>
+            
+           
+               
+            
+             </div>
+            
+            </div>
+            <br> <br>
+            </ol>
+
+            <div class="test_image_and_result cl-xs-12">
+                <ol start="8" style="font-size: 30px;">
+                 <li class="col-sm-4 col-xs-12">
+                     <b id="test_image"> Test Image - </b>
+                     <img style="height: 300px;" src="torch.jpeg" class="img_responsive">
+                 </li>
+                
+                 <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                     Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Google lens</b> -
+                     <span style="font-weight: bold; color: rgb(54, 85, 220);"> Torch Light </span>
+                 </h5>
+                
+                 <h5 style="font-size: 25px;" class="col-sm-4 col-xs-12">
+                     Output on <b style="font-weight: bold; color: rgb(154, 22, 154);">Mobilenet Model </b> -
+                     <span style="font-weight: bold; color: rgb(54, 85, 220);"> spotlight </span>
+                 </h5>
+                
+                 <div class="mini_result" class="col-xs-12">
+                     <h4 style="font-weight: bold; font-size: 35px;">Result - </h4>
+                     <hr>
+                     <h4 style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size:30px; "> Google lens is more accurate </h4>
+                 </div>
+                     
+                
+                 </div>
+                
+                </div>
+                <br> <br>
+                </ol>
+
+                <h5 id="inform">
+                    I have used 8 images <b>GOOGLE LENS</b> have predicted 8 of them <b>MOBILENET</b> is less accurate
+                </h5>
+
+                <div class="copy_right_footer">
+                    Devloped by-Naisha Choudhary
+                  </div>
+
+    </center>
+</body>
+
+</html>

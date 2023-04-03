@@ -1,0 +1,69 @@
+h1 {
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
+
+
+#google {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#lens_img {
+    height: 150px;
+}
+
+#mobilenet {
+    font-size: 30px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#mnet {
+   width: 30px;
+}
+
+img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  height: 200px;
+}
+
+#test_image {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.test_image_and_result{
+    background-color: gray;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.copy_right_footer {
+    position : fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(168, 225, 36, 0.709);
+    text-align: center;
+    color: rgb(21, 5, 5);
+    line-height: 3;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+
+  #inform {
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width:  90%;
+    background-color: plum;
+    border-radius: 20px;
+    margin-bottom: 90px;
+  }
+
+  b {
+    color: rgb(172, 39, 229);
+  }
